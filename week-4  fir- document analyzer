@@ -1,15 +1,3 @@
-Fair point — let's make that section cleaner and more professional, without the comparison line.
-
-```markdown
-## 🎯 Project Overview
-This project is an **AI-powered FIR & Court Document Analyzer** that uses a locally hosted Large Language Model (via **Ollama**) to read, summarize, and answer questions about First Information Reports (FIRs) and other court documents. It was built as part of the Week-04 internship task: *"Build Your Own AI Document Analyzer."*
-
-The tool is designed to assist in quickly understanding legal and police documents by extracting key details — such as the date, time, location, and parties involved — and allowing users to ask natural-language questions to get instant, context-aware answers.
-```
-
-Here's the full README again with that update, ready to copy:
-
-```markdown
 # 📄 FIR & Court Document Analyzer - Week 04 Task
 
 ## 🎯 Project Overview
@@ -29,51 +17,48 @@ The tool is designed to assist in quickly understanding legal and police documen
 - **Document Upload:** Upload an FIR or court document in `.pdf` or `.txt` format
 - **Automatic Text Extraction:** Extracts readable text from the uploaded document, page by page
 - **AI-Powered Summarization:** Generates a plain-English summary of the document, including key details like date, time, location, and parties involved
-- **Interactive Q&A:** Ask any follow-up question about the uploaded document (e.g. *"Who filed this FIR?"*, *"What section was applied?"*) and get an instant AI-generated answer
+- **Interactive Q&A:** Ask any follow-up question about the uploaded document (e.g. "Who filed this FIR?", "What section was applied?") and get an instant AI-generated answer
 - **Fully Local & Private:** All AI processing happens on your own machine via Ollama — no data is sent to any external server
 
 ## 🚀 How to Run the Application
 
 ### Prerequisites
 - Python 3.9 or higher installed
-- [Ollama](https://ollama.com/download) installed and running on your system
+- Ollama installed and running on your system (https://ollama.com/download)
 - The `llama3.2` model pulled locally:
-```
+
 ollama pull llama3.2
-```
 
 ### Installation & Setup
 1. Clone the repository (if you haven't already)
 2. Navigate to the project directory:
-```
-cd week-4-fir-analyzer-document
-```
+
+cd week-4-fir-document-analyzer
+
 3. Create and activate a virtual environment:
-```
+
 python -m venv venv
 venv\Scripts\activate      # Windows
 source venv/bin/activate   # Mac/Linux
-```
+
 4. Install the required Python packages:
-```
+
 pip install streamlit pdfplumber requests
-```
 
 ### Running the Application
-```
+
 streamlit run app.py
-```
+
 This will open the app in your browser at `http://localhost:8501`, where you can:
 1. Upload an FIR/court document (PDF or TXT)
 2. Click **"Summarize Document"** to get an AI-generated summary
 3. Type a question in the **"Ask a Question About This Document"** box and click **"Get Answer"**
 
 ## 📁 Project Structure
-```
-week-4-fir-analyzer-document/
+
+week-4-fir-document-analyzer/
 ├── app.py              # Main Streamlit application
 └── venv/               # Virtual environment (not included in repo)
-```
 
 ## 💡 How It Works
 1. **Upload:** The user uploads an FIR/court document through the Streamlit interface
@@ -88,10 +73,6 @@ week-4-fir-analyzer-document/
 - Add a downloadable PDF/Excel report of the summary and Q&A history
 - Support batch analysis of multiple documents at once
 
-
-## 🙏 Acknowledgments
-- Infrix for providing this internship opportunity
-- The open-source community behind Ollama, Streamlit, and Python
-
 ## ✍️ Author
 **Zuhaa Hayat**
+
