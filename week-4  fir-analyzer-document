@@ -1,0 +1,97 @@
+Fair point — let's make that section cleaner and more professional, without the comparison line.
+
+```markdown
+## 🎯 Project Overview
+This project is an **AI-powered FIR & Court Document Analyzer** that uses a locally hosted Large Language Model (via **Ollama**) to read, summarize, and answer questions about First Information Reports (FIRs) and other court documents. It was built as part of the Week-04 internship task: *"Build Your Own AI Document Analyzer."*
+
+The tool is designed to assist in quickly understanding legal and police documents by extracting key details — such as the date, time, location, and parties involved — and allowing users to ask natural-language questions to get instant, context-aware answers.
+```
+
+Here's the full README again with that update, ready to copy:
+
+```markdown
+# 📄 FIR & Court Document Analyzer - Week 04 Task
+
+## 🎯 Project Overview
+This project is an **AI-powered FIR & Court Document Analyzer** that uses a locally hosted Large Language Model (via **Ollama**) to read, summarize, and answer questions about First Information Reports (FIRs) and other court documents. It was built as part of the Week-04 internship task: *"Build Your Own AI Document Analyzer."*
+
+The tool is designed to assist in quickly understanding legal and police documents by extracting key details — such as the date, time, location, and parties involved — and allowing users to ask natural-language questions to get instant, context-aware answers.
+
+## 🛠️ Technologies Used
+- **Python 3.10** – Core programming language
+- **Ollama** – For running the LLM (`llama3.2`) locally, with no internet or paid API required
+- **Streamlit** – To create an interactive web interface
+- **Libraries:**
+  - `pdfplumber` – for extracting text from PDF documents
+  - `requests` – for communicating with the local Ollama API
+
+## ✨ Key Features
+- **Document Upload:** Upload an FIR or court document in `.pdf` or `.txt` format
+- **Automatic Text Extraction:** Extracts readable text from the uploaded document, page by page
+- **AI-Powered Summarization:** Generates a plain-English summary of the document, including key details like date, time, location, and parties involved
+- **Interactive Q&A:** Ask any follow-up question about the uploaded document (e.g. *"Who filed this FIR?"*, *"What section was applied?"*) and get an instant AI-generated answer
+- **Fully Local & Private:** All AI processing happens on your own machine via Ollama — no data is sent to any external server
+
+## 🚀 How to Run the Application
+
+### Prerequisites
+- Python 3.9 or higher installed
+- [Ollama](https://ollama.com/download) installed and running on your system
+- The `llama3.2` model pulled locally:
+```
+ollama pull llama3.2
+```
+
+### Installation & Setup
+1. Clone the repository (if you haven't already)
+2. Navigate to the project directory:
+```
+cd week-4-fir-analyzer-document
+```
+3. Create and activate a virtual environment:
+```
+python -m venv venv
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # Mac/Linux
+```
+4. Install the required Python packages:
+```
+pip install streamlit pdfplumber requests
+```
+
+### Running the Application
+```
+streamlit run app.py
+```
+This will open the app in your browser at `http://localhost:8501`, where you can:
+1. Upload an FIR/court document (PDF or TXT)
+2. Click **"Summarize Document"** to get an AI-generated summary
+3. Type a question in the **"Ask a Question About This Document"** box and click **"Get Answer"**
+
+## 📁 Project Structure
+```
+week-4-fir-analyzer-document/
+├── app.py              # Main Streamlit application
+└── venv/               # Virtual environment (not included in repo)
+```
+
+## 💡 How It Works
+1. **Upload:** The user uploads an FIR/court document through the Streamlit interface
+2. **Extract Text:** `pdfplumber` extracts raw text from the PDF page by page (or reads plain text directly for `.txt` files)
+3. **AI Summarization:** The extracted text is sent to the locally running Ollama model (`llama3.2`) via its local API, asking it to summarize the document in plain English
+4. **Interactive Q&A:** Any question typed by the user, along with the document text, is sent to the same model, which generates a contextual answer
+5. **Display Results:** Both the summary and Q&A answers are displayed directly in the Streamlit interface
+
+## 🔮 Future Improvements
+- Add OCR support for scanned or image-based PDFs
+- Improve handling of bilingual (Urdu/English) documents, since many real FIRs are mixed-language
+- Add a downloadable PDF/Excel report of the summary and Q&A history
+- Support batch analysis of multiple documents at once
+
+
+## 🙏 Acknowledgments
+- Infrix for providing this internship opportunity
+- The open-source community behind Ollama, Streamlit, and Python
+
+## ✍️ Author
+**Zuhaa Hayat**
